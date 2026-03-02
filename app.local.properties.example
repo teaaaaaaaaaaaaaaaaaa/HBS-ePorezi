@@ -1,0 +1,19 @@
+# =============================================================
+# HBS ZARADE - Konfiguracija baza podataka
+# =============================================================
+#
+# Kopirajte ovaj fajl u app.local.properties i prilagodite putanje.
+# Fajl app.local.properties NIJE u git-u (ignorisan je).
+#
+# Putanje mogu biti relativne (od root-a projekta) ili apsolutne.
+#
+# =============================================================
+
+# Common/Shared baza (pomocne tabele, zajednicke sifre)
+db.common.path=stari_access/db/aj_fn_cmn.mdb
+
+# Glavna poslovna baza (primaoci, isplatioci, sifarnici)
+db.main.path=stari_access/db/data_zarade.mdb
+
+# Baza obracuna (obracuni i stavke obracuna)
+db.calc.path=stari_access/db/obracun-honorara.mdb

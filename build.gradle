@@ -1,20 +1,82 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
 group = 'rs.hbs.zarade'
 version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    // UCanAccess - JDBC driver za MS Access
+    // Verzija 5.0.1 zahteva HSQLDB 2.5.x
+    implementation 'net.sf.ucanaccess:ucanaccess:5.0.1'
+
+    // HSQLDB - UCanAccess 5.0.1 zahteva ovu verziju
+    implementation 'org.hsqldb:hsqldb:2.5.2'
+
+    // Jackcess - UCanAccess zavisi od ovoga
+    implementation 'com.healthmarketscience.jackcess:jackcess:4.0.5'
+
+    // Commons Lang - korisne utility funkcije
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+
+    // iText PDF - za generisanje PDF izveštaja
+    implementation 'com.itextpdf:itext7-core:7.2.5'
+
+    // Testiranje
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+application {
+    mainClass = 'rs.hbs.zarade.Launcher'
+    applicationName = 'ePorezi'
+}
+
+javafx {
+    version = '17'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+// Task za analizu seme baze
+tasks.register('analyzeSchema', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'rs.hbs.zarade.util.SchemaAnalyzer'
+}
+
+// Task za testiranje DAO sloja
+tasks.register('testDao', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'rs.hbs.zarade.util.DaoTest'
+}
+
+// Task za testiranje validatora
+tasks.register('testValidation', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'rs.hbs.zarade.util.ValidationTest'
+}
+
+// Task za testiranje obračuna
+tasks.register('testObracun', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'rs.hbs.zarade.util.ObracunTest'
+}
+
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }

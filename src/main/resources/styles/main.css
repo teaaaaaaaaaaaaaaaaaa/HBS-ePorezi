@@ -1,0 +1,412 @@
+/* ====================================================================
+   HBS ZARADE — Design System
+   Minimalist, modern, professional business application
+   ==================================================================== */
+
+/* ── Base ──────────────────────────────────────────────────────────── */
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-background-color: #F6F8FA;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────── */
+
+/* Primary — blue, main actions */
+.button-primary {
+    -fx-background-color: #0969DA;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-effect: none;
+}
+.button-primary:hover {
+    -fx-background-color: #0550AE;
+}
+.button-primary:disabled {
+    -fx-background-color: #B6C5D9;
+    -fx-text-fill: #F6F8FA;
+}
+
+/* Success — green, save/confirm */
+.button-success {
+    -fx-background-color: #1A7F37;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.button-success:hover {
+    -fx-background-color: #116329;
+}
+.button-success:disabled {
+    -fx-background-color: #B6CBB9;
+    -fx-text-fill: #F6F8FA;
+}
+
+/* Legacy mapping — .button-primary was previously green */
+/* Keep for backwards compat */
+
+/* Secondary — outlined, neutral */
+.button-secondary {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #24292F;
+    -fx-font-weight: normal;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 6;
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-cursor: hand;
+}
+.button-secondary:hover {
+    -fx-background-color: #EEF2F7;
+    -fx-border-color: #B3BEC8;
+}
+
+/* Danger — red */
+.button-danger {
+    -fx-background-color: #CF222E;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.button-danger:hover {
+    -fx-background-color: #A40E26;
+}
+
+/* Warning — amber, export actions */
+.button-warning {
+    -fx-background-color: #9A6700;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.button-warning:hover {
+    -fx-background-color: #7C5300;
+}
+
+/* Close — ghost red text button */
+.button-close {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CF222E;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+.button-close:hover {
+    -fx-background-color: #FFEBE9;
+}
+
+/* ── Form fields ───────────────────────────────────────────────────── */
+
+/* Standard input — clean white */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-text-fill: #1F2328;
+    -fx-font-size: 13px;
+}
+.text-field:focused {
+    -fx-border-color: #0969DA;
+    -fx-border-width: 1.5;
+}
+
+/* Required field — subtle left accent */
+.required-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #0969DA transparent transparent transparent;
+    /* Note: JavaFX doesn't support individual border sides well; handled in Java */
+}
+
+/* Valid field — green border */
+.valid-field {
+    -fx-border-color: #1A7F37;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+/* Invalid field — red border */
+.invalid-field {
+    -fx-border-color: #CF222E;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+/* ── Labels ────────────────────────────────────────────────────────── */
+
+.label-section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2328;
+}
+
+.label-required {
+    -fx-text-fill: #0969DA;
+    -fx-font-weight: bold;
+}
+
+/* ── Headers ───────────────────────────────────────────────────────── */
+
+/* Screen list header (light) */
+.header-screen {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #D0D7DE transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 14 16;
+}
+
+/* Colored state headers — set inline in Java per state */
+.header-blue    { -fx-background-color: #0969DA; }
+.header-orange  { -fx-background-color: #9A6700; }
+.header-green   { -fx-background-color: #1A7F37; }
+.header-dark    { -fx-background-color: #343942; }
+.header-light-blue { -fx-background-color: #EEF2F7; }
+
+/* ── Footers ───────────────────────────────────────────────────────── */
+
+.footer {
+    -fx-background-color: #F6F8FA;
+    -fx-border-color: #D0D7DE transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 10 20;
+}
+
+/* ── Tables ────────────────────────────────────────────────────────── */
+
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #F6F8FA;
+    -fx-border-color: #D0D7DE;
+    -fx-font-weight: bold;
+    -fx-text-fill: #57606A;
+    -fx-font-size: 12px;
+    -fx-padding: 8 10;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F6F8FA;
+}
+
+.table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #EEF2F7 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #FAFBFC;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #DDF4FF;
+    -fx-text-fill: #1F2328;
+}
+
+/* Fix: sprečava belo obojavanje teksta u selektovanim ćelijama */
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #1F2328;
+}
+.table-row-cell:selected .text {
+    -fx-fill: #1F2328;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #EEF2F7;
+}
+
+/* ── ListView ──────────────────────────────────────────────────────── */
+
+.list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 0;
+}
+
+.list-cell:selected {
+    -fx-background-color: #DDF4FF;
+    -fx-text-fill: #1F2328;
+}
+
+.list-cell:hover {
+    -fx-background-color: #EEF2F7;
+}
+
+/* ── Sum indicators ────────────────────────────────────────────────── */
+
+.suma-neto {
+    -fx-background-color: #DDF4FF;
+    -fx-text-fill: #0969DA;
+    -fx-padding: 6 16;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+
+.suma-bruto {
+    -fx-background-color: #D4EFD9;
+    -fx-text-fill: #1A7F37;
+    -fx-padding: 6 16;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+
+/* ── Unsaved changes banner ────────────────────────────────────────── */
+
+.banner-unsaved {
+    -fx-background-color: #FFF8C5;
+    -fx-text-fill: #9A6700;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 6 20;
+    -fx-border-color: transparent transparent transparent #9A6700;
+    -fx-border-width: 0 0 0 3;
+}
+
+/* ── Cards ─────────────────────────────────────────────────────────── */
+
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(27,31,35,0.06), 8, 0, 0, 2);
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+/* ── Filter field ──────────────────────────────────────────────────── */
+
+.filter-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 13px;
+    -fx-padding: 7 10;
+}
+.filter-field:focused {
+    -fx-border-color: #0969DA;
+}
+
+/* ── ComboBox ──────────────────────────────────────────────────────── */
+
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D0D7DE;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 13px;
+}
+.combo-box:focused {
+    -fx-border-color: #0969DA;
+}
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* ── Scroll pane ───────────────────────────────────────────────────── */
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ── Separator ─────────────────────────────────────────────────────── */
+
+.separator {
+    -fx-background-color: #D0D7DE;
+}
+.separator .line {
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ── TabPane ───────────────────────────────────────────────────────── */
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #F6F8FA;
+    -fx-border-color: transparent transparent #D0D7DE transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.tab {
+    -fx-background-color: transparent;
+    -fx-text-fill: #57606A;
+    -fx-padding: 8 16;
+}
+
+.tab:selected {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1F2328;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent #0969DA transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.tab:hover {
+    -fx-background-color: #EEF2F7;
+}
+
+/* ── Menu buttons (SifarniciMenu) ──────────────────────────────────── */
+
+.menu-button {
+    -fx-pref-width: 300;
+    -fx-pref-height: 60;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1F2328;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-color: #D0D7DE;
+    -fx-border-width: 1;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+}
+.menu-button:hover {
+    -fx-background-color: #EEF2F7;
+    -fx-border-color: #0969DA;
+    -fx-border-width: 1.5;
+}
+
+/* ── Login screen ──────────────────────────────────────────────────── */
+
+.login-container {
+    -fx-background-color: #1C2128;
+    -fx-padding: 50;
+}
+
+.login-title {
+    -fx-text-fill: #E6EDF3;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}

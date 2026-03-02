@@ -41,3 +41,48 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# ===============================
+# Legacy Access (NE COMMITOVATI)
+# ===============================
+stari_access/
+ui_reference/
+
+# ===============================
+# Access & exporti
+# ===============================
+*.accdb
+*.mdb
+VBA_EXPORT/
+EXPORT/
+TEMP/
+*.bak
+
+# ===============================
+# Logs
+# ===============================
+*.log
+
+# ===============================
+# Claude / AI reference docs
+# ===============================
+CLAUDE.md
+app.local.properties
+
+# ===============================
+# Claude Code lokalne postavke
+# ===============================
+.claude/
+
+# ===============================
+# Privremeni / lokalni fajlovi
+# ===============================
+build_output.txt
+test*.txt
+wf.ps1
+write_files.ps1
+
+# ===============================
+# IntelliJ IDEA — plugin fajlovi
+# ===============================
+.idea/IntelliLang.xml
